@@ -10,7 +10,12 @@ d3.json("samples.json").then(data => {
         dropDown.append("option").text(name).property("value", name)
     });
 
+    samplesResult = data.samples.filter(subjectObject => subjectObject.id == "940")
+    console.log(samplesResult)
 
+    var ids = samplesResult.otu_ids
+    var values = samplesResult.sample_values
+    var labels = samplesResult.otu_labels
 
     var data = [{
         type: 'bar',
