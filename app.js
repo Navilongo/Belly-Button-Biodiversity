@@ -2,6 +2,14 @@
 d3.json("samples.json").then((data) => {
     console.log(data);
 });
+// 
+var data = [{
+    type: 'bar',
+    x: [20, 14, 23],
+    y: ['giraffes', 'orangutans', 'monkeys'],
+    orientation: 'h'
+    }];
+ Plotly.newPlot('bar', data);
 // Create horizontal bar with a dropdown menu to display the top 10 OTUs found in that individual.
 
 // Use sample_values as the values for the bar chart
