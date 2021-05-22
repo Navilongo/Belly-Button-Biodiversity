@@ -1,4 +1,5 @@
-// Use D3 library to read the samples.json
+// Use D3 library to read the samples.json and console.log to confirm
+//  Use the data pulled from json to inform the drop down menu
 d3.json("samples.json").then(data => {
     var imported = data;
     console.log(imported);
