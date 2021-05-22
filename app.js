@@ -10,4 +10,26 @@ d3.json("samples.json").then(data => {
         dropDown.append("option").text(name).property("value", name)
     });
 
+
+
+    var data = [{
+        type: 'bar',
+        x: ids,
+        y: values,
+        orientation: 'h'
+    }];
+
+    Plotly.newPlot("bar", data);
+
 });
+
+// testing bar charts
+/*
+var data = [{
+    type: 'bar',
+    x: [20, 14, 23],
+    y: ['giraffes', 'orangutans', 'monkeys'],
+    orientation: 'h'
+    }];
+ Plotly.newPlot('bar', data);
+ */
