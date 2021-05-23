@@ -14,7 +14,14 @@ d3.json("samples.json").then(data => {
     console.log(defaultSample);
 
     // Demographics Info
-    
+    dropDown.on("change", selectionID)
+
+    function selectionID() {
+        idSelected = d3.event.target.value;
+        console.log(idSelected)
+
+    };
+
 
 
 
