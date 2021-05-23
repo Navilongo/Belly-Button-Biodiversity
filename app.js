@@ -24,6 +24,14 @@ d3.json("samples.json").then(data => {
 
     };
 
+
+    var metadata = data.metadata
+    console.log(metadata);
+    
+    //testEth = data.metadata.filter(person => person.id === "940")
+    //console.log(testEth)
+
+
     function updatePlotly(idSelected) {
         ethnicity = data.metadata.ethnicity
         console.log(ethnicity)
