@@ -16,18 +16,25 @@ d3.json("samples.json").then(data => {
     // Demographics Info
     dropDown.on("change", selectionID)
 
+
+    
+
     // Function to capture the ID selected by user
     function selectionID() {
         idSelected = d3.event.target.value;
-        console.log(idSelected)
+        console.log("This is the id Selected:" + idSelected)
 
         // Calls to later function in which we gather information from id selected
         demoInfo(idSelected)
 
     };
 
+    
+
+  
+
     // Function to pull all metadata information from selected id
-    function demoInfo(idSelected) {
+    function demoInfo() {
         // Access metadata dictionary
         var metadata = data.metadata
         console.log(metadata);
@@ -43,31 +50,39 @@ d3.json("samples.json").then(data => {
         demographicInfo.html("");
 
         Object.entries(selectedPerson).forEach(key => {
-            demographicInfo.append("h6").text(key[0] + " : " + key[1])
+            demographicInfo.append("h6")
+            .text(key[0] + " : " + key[1])
         })
 
-        
+    } 
 
+   
+    
 
-    }
+    // Function to start plots
+
 
     
 
 
 
 
-
-
-
-
-
-
-
-
-    });
+});
 
  
+function plotBuild() {
+    d3.json("samples.json").then(data => {
+        idSelected = d3.event.target.value
+        var samplesResult = data.samples.filter(objectSample => objectSample.id === id)[0]
+        console.log("This is the attempt at pulling samples:" + samplesResult)
+    })
+    
+    
+};
 
+
+    
+    
     /*
 
     samplesResult = data.samples.filter(subjectObject => subjectObject.id == "940")[0]
