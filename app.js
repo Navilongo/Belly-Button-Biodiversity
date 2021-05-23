@@ -39,9 +39,14 @@ d3.json("samples.json").then(data => {
         // HTML id in which to append filted information
         var demographicInfo = d3.select("#sample-metadata");
 
+        // Reset Demographic Info chart
+        demographicInfo.html("");
+
         Object.entries(selectedPerson).forEach(key => {
             demographicInfo.append("h6").text(key[0] + " : " + key[1])
         })
+
+        
 
 
     }
