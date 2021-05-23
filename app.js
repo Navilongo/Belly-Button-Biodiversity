@@ -8,22 +8,44 @@ d3.json("samples.json").then(data => {
 
     subject.forEach(name => {
         dropDown.append("option").text(name).property("value", name)
+    })
+
+    defaultSample = data.samples.filter(person => person.id === "940")[0]
+    console.log(defaultSample);
+
+    // Demographics Info
+    
+
+
+
+
+
+
+
+
+
+
+
     });
+
+ 
+
+    /*
 
     samplesResult = data.samples.filter(subjectObject => subjectObject.id == "940")[0]
     console.log(samplesResult)
 
-    var ids = samplesResult.otu_ids.slice(0,10)
+    var ids = samplesResult.otu_ids.slice(0,10).reverse()
     console.log("These are the otu_ids: " + ids)
-    var values = samplesResult.sample_values.slice(0,10)
+    var values = samplesResult.sample_values.slice(0,10).reverse()
     console.log("These are the sample_values: " + values)
-    var labels = samplesResult.otu_labels.slice(0,10)
+    var labels = samplesResult.otu_labels.slice(0,10).reverse()
     console.log("These are the otu_labels: " + labels)
 
     var data = [{
         type: 'bar',
-        x: ids,
-        y: values,
+        x: values,
+        y: ids,
         orientation: 'h'
     }];
 
@@ -32,14 +54,6 @@ d3.json("samples.json").then(data => {
     Plotly.newPlot("bar", data);
 
 });
-
+    */
+   
 // testing bar charts
-/*
-var data = [{
-    type: 'bar',
-    x: [20, 14, 23],
-    y: ['giraffes', 'orangutans', 'monkeys'],
-    orientation: 'h'
-    }];
- Plotly.newPlot('bar', data);
- */
