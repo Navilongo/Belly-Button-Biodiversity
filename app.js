@@ -16,6 +16,27 @@ d3.json("samples.json").then(data => {
     // Demographics Info
     dropDown.on("change", selectionID)
 
+    // Default graph for ID 940
+    samplesResult = data.samples.filter(subjectObject => subjectObject.id == "940")[0]
+    console.log(samplesResult)
+
+    var ids = samplesResult.otu_ids.slice(0,10).reverse()
+    console.log("These are the otu_ids: " + ids)
+    var values = samplesResult.sample_values.slice(0,10).reverse()
+    console.log("These are the sample_values: " + values)
+    var labels = samplesResult.otu_labels.slice(0,10).reverse()
+    console.log("These are the otu_labels: " + labels)
+
+    var data = [{
+        type: 'bar',
+        x: values,
+        y: ids,
+        orientation: 'h'
+    }];
+
+    Plotly.newPlot("bar", data);
+
+
 
     
 
@@ -56,20 +77,12 @@ d3.json("samples.json").then(data => {
 
     } 
 
-   
-    
-
-    // Function to start plots
-
-
-    
-
 
 
 
 });
 
- 
+// Why is this invisible? Where is it? 
 function plotBuild() {
     d3.json("samples.json").then(data => {
         idSelected = d3.event.target.value
@@ -81,32 +94,3 @@ function plotBuild() {
 };
 
 
-    
-    
-    /*
-
-    samplesResult = data.samples.filter(subjectObject => subjectObject.id == "940")[0]
-    console.log(samplesResult)
-
-    var ids = samplesResult.otu_ids.slice(0,10).reverse()
-    console.log("These are the otu_ids: " + ids)
-    var values = samplesResult.sample_values.slice(0,10).reverse()
-    console.log("These are the sample_values: " + values)
-    var labels = samplesResult.otu_labels.slice(0,10).reverse()
-    console.log("These are the otu_labels: " + labels)
-
-    var data = [{
-        type: 'bar',
-        x: values,
-        y: ids,
-        orientation: 'h'
-    }];
-
-    
-
-    Plotly.newPlot("bar", data);
-
-});
-    */
-   
-// testing bar charts
