@@ -20,7 +20,16 @@ d3.json("samples.json").then(data => {
         idSelected = d3.event.target.value;
         console.log(idSelected)
 
+        updatePlotly(idSelected)
+
     };
+
+    function updatePlotly(idSelected) {
+        ethnicity = data.metadata.ethnicity
+        console.log(ethnicity)
+    }
+
+    
 
 
 
