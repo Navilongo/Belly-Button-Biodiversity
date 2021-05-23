@@ -20,7 +20,7 @@ d3.json("samples.json").then(data => {
     samplesResult = data.samples.filter(subjectObject => subjectObject.id == "940")[0]
     console.log(samplesResult)
 
-    var ids = samplesResult.otu_ids.slice(0,10).reverse()
+    var ids = samplesResult.otu_ids.slice(0,10)
     console.log("These are the otu_ids: " + ids)
     var values = samplesResult.sample_values.slice(0,10).reverse()
     console.log("These are the sample_values: " + values)
@@ -90,7 +90,7 @@ function plotBuild() {
         console.log("This is the attempt at pulling samples:" + samplesResult)
     })
     
-    
+    // Try a new method and go again
 };
 
 
